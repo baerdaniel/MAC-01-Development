@@ -1,0 +1,273 @@
+
+/* Font loader ------------------*/
+
+@font-face {
+    font-family: 'Unica';
+    src: url('../fonts/NeueHaasUnicaPro-Regular.otf');
+   /* src: url('../fonts/NeueHaasUnicaPro-Regular.eot');
+    src: url('../fonts/NeueHaasUnicaPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/NeueHaasUnicaPro-Regular.woff') format('woff'),
+         url('../fonts/NeueHaasUnicaPro-Regular.ttf') format('truetype'),
+         url('../fonts/NeueHaasUnicaPro-Regular.svg#Unica') format('svg');*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Spinning loader ------------------*/
+
+.spinner {
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 700ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 700ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 700ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-transition: rotate(3600deg);
+}  
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@-moz-keyframes spin {
+  from {-moz-transform:rotate(0deg);}
+  to {-moz-transform:rotate(360deg);}
+}
+
+@-o-keyframes spin {
+  from {-o-transform:rotate(0deg);}
+  to {-o-transform:rotate(360deg);}
+}
+
+@-ms-keyframes spin {
+  from {-ms-transform:rotate(0deg);}
+  to {-ms-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+
+
+
+/* Typography ------------------*/
+
+body, html {
+  font-size: 21px;
+  font-family: 'Unica', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1em;
+}
+
+
+
+/* Layout ------------------*/
+
+body {
+}
+
+/* Header */
+.main-menu {
+  position: fixed;
+  left: 0;
+  width: 100vh;
+  height: 3rem;
+  z-index: 3;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  background-color: white;
+  background: url('../img/gradient-2.png');
+  background-size: cover;
+  background-attachment: fixed;
+
+  -ms-transform: rotate(-90deg) translateX(-100%);
+  -webkit-transform: rotate(-90deg) translateX(-100%);
+  transform: rotate(-90deg) translateX(-100%);
+  -ms-transform-origin: left top;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+
+  -webkit-transition: height 0.3s ease-in-out;
+  -moz-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+}
+
+.main-menu.open {
+  height: 50vw;
+}
+
+.main-menu a {
+  padding: 10%;
+  color: black;
+}
+
+.main-info {
+  min-height: 100vh;
+  background: white;
+  padding-left: 4rem;
+}
+
+/* Content */
+
+.main-content {
+  padding-left: 4rem;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: -1;
+}
+
+.main-content section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  position: relative;
+  z-index: 10;
+}
+
+.students {
+  margin-top: 2.45rem;
+  margin-bottom: 17.5rem;
+}
+
+.row {;
+  width: 100%;
+  position: relative;
+  line-height: 2em;
+}
+
+.row > * {
+  height: auto;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.row .image {
+  width: 50%;
+  height: 100vh;
+  padding: 0;
+  padding-left: 1.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.row .image picture  {
+  width: 100%;
+  max-height: 100vh;
+}
+
+.row:hover .image picture {
+-webkit-transition: all 0.5s 0s;
+  -moz-transition: all 0.5s 0s;
+  transition: all 0.5s 0s;
+}
+
+.row:hover > * {
+  font-style: italic;
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.row:hover .image {
+  opacity: 1;
+  pointer-events: none;
+  transform: translateX(0px);
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contact {
+  margin-left: 33%;
+}
+
+
+
+/* Pattern */
+
+.pattern {
+  font-size: 2rem;
+  line-height: 01em;
+  height: auto;
+  position: absolute;
+  z-index: 0;
+  right: 0;
+}
+
+.unit-row {
+  text-align: right;
+}
+
+.pattern .hide {
+  color: transparent;
+}
+
+.pattern .hide:hover {
+  color: #000;
+}
+
+.pattern .swap:hover {
+  color: transparent;
+}
+
+
+/* Footer ------------------*/
+
+.page-footer .copyright {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+/* Media Queries ------------------*/
+
+
+/* Medium (as per framework.css) */
+
+@media screen and (max-width: 800px) {
+}
+
+/* Small (as per framework.css) */
+
+@media screen and (max-width: 600px) {
