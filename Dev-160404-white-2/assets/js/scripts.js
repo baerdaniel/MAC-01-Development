@@ -32,6 +32,7 @@ $(document).ready(function(){
 	  .mouseenter(function() {
 	    $('.students').css('color','transparent');
 	    $('.pattern').css('color','black');
+	    $('.close.hide').removeClass('hide');
 	  })
 	  .mouseleave(function() {
 	    $('.students').css('color','black');
@@ -41,9 +42,11 @@ $(document).ready(function(){
 	$( '.students' )
 	  .mouseenter(function() {
 	    $('.pattern').css('color','transparent');
+	    
 	  })
 	  .mouseleave(function() {
 	    $('.pattern').css('color','black');
+	    
 	  });
 
 
@@ -51,10 +54,49 @@ $(document).ready(function(){
 	    if(event.pageX < 100){
 	        $('.main-menu').addClass('open');
 	    } else {
-	    	$('.main-menu').removeClass('open');
+	    	// $('.main-menu').removeClass('open');
 	    }
-
 	  });
+
+	  $('.close').click(function() {
+        $('.main-menu').removeClass('open');
+        $('.close').addClass('hide');
+      });
+
+
+	  var winHeight = $(window).height();
+		var section1 = 0;
+		var section2 = $('#photography').offset().top - winHeight/2;
+		var section3 = $('#fine-art').offset().top - winHeight/2;
+		var section4 = $('#art-and-science').offset().top - winHeight/2;
+
+		$(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        if(scrollTop > section1 && scrollTop <= section2){
+            $('.link-main-info').addClass('active');
+            $('.link-photography').removeClass('active');
+            $('.link-art-and-science').removeClass('active');
+
+        } else if(scrollTop > section2 && scrollTop <= section3){
+            $('.link-photography').addClass('active');
+            $('.link-main-info').removeClass('active');
+            $('.link-fine-art').removeClass('active');
+                
+        } else if(scrollTop > section3 && scrollTop <= section4){
+        	$('.link-fine-art').addClass('active');
+            $('.link-photography').removeClass('active');
+            $('.link-art-and-science').removeClass('active');
+        } else if(scrollTop > section4) {
+        	$('.link-art-and-science').addClass('active');
+            $('.link-fine-art').removeClass('active');
+        };
+
+
+
+        // $('html').css({transform:'rotate(' + scrollTop/10 + 'deg)'});
+
+
+});
 
 
 });

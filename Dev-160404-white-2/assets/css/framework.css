@@ -18,7 +18,7 @@ footer, header, hgroup, menu, nav, section {
 
 iframe { border: 0; }
 
-button {background: transparent; border: 0; cursor: pointer;}
+button {background: transparent; border: 0; cursor: pointer; font: inherit;}
 
 a, *:focus, *:active {
   outline: 0;
@@ -80,12 +80,12 @@ h1, h2, h3, h4 {
 .flex-container {
    display: -webkit-flex;
    display: flex;
-   -webkit-flex-direction: row wrap;
-   flex-flow: row wrap;
+   -webkit-flex-direction: row nowrap;
+   flex-flow: row nowrap;
    -webkit-align-items: center;
    align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
+   -webkit-justify-content: space-around;
+   justify-content: space-around;
 }
 
 .flex-left-container {
